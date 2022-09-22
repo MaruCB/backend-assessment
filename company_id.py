@@ -1,4 +1,3 @@
-from email import iterators
 import json
 
 with open('assets/company.json') as f:
@@ -15,7 +14,7 @@ for user in user_data['empl_details']:
         if user['company_id'] == company['id']:
             user['company_id'] = company
             user['company_id'] = user.pop('company_id')
-            print(user)
+            print(json.dumps(user))
         
 
 
