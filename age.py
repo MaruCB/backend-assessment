@@ -1,6 +1,5 @@
 import json
 from datetime import datetime
-from operator import truediv
 
 with open('assets/user.json') as f:
    data = json.load(f)

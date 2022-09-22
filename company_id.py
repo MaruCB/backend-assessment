@@ -3,7 +3,7 @@ import json
 with open('assets/company.json') as f:
    company_data = json.load(f)
 
-f.close()
+# f.close()
 
 with open('assets/user.json') as f:
    user_data = json.load(f)
@@ -18,4 +18,4 @@ for user in user_data['empl_details']:
         
 
 
-f.close()
+# f.close()
