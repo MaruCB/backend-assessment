@@ -6,7 +6,7 @@ with open('assets/company.json') as f:
 with open('assets/user.json') as f:
    user_data = json.load(f)
 
-for user in user_data['empl_details']:
+for user in user_data:
     company_id = user['company_id']
     for company in company_data:
         if company_id == company['id']:
