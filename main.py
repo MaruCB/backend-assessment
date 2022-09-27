@@ -1,39 +1,60 @@
+import os
 import json
+from typing import List
 from models import Company, User
 from datetime import datetime
 
-with open('assets/user.json') as f:
-   user_data = json.load(f)
+PATH = 'output/output.json'
 
-with open('assets/company.json') as f:
-   company_data = json.load(f)
 
-companies_list = []
+def get_company() -> List[Company]:
 
-for company in company_data:
-   c = Company(id=company["id"],name=company["name"], headquarters=company["headquarters"], industry=company["industry"] )
-   companies_list.append(c)
+   with open('assets/company.json') as f:
+      company_data = json.load(f)
 
-for company in companies_list:
-   print(json.dumps(company.to_json()))
+   companies_list = []
+   for company in company_data:
+      c = Company(id=company["id"],name=company["name"], headquarters=company["headquarters"], industry=company["industry"] )
+      companies_list.append(c)
+   
+   return companies_list
 
-users_list = []
 
-for user in user_data:
-   the_company = None
+def get_user() -> List[User]:
 
-   for company in companies_list:
-      if user['company_id'] == company.id:
-         the_company = company
+   with open('assets/user.json') as f:
+      user_data = json.load(f)
 
-   u = User(forename=user["forename"], surname=user["surname"], date_of_birth=user["date_of_birth"], location=user["location"], company=the_company)
+   users_list = []   
+   for user in user_data:
+      the_company = None
 
-   birthdate = datetime.strptime(u.date_of_birth, '%Y/%m/%d').date()
-   today = datetime.today()    
-   age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
-   if age >= 30:
-      users_list.append(u)
+      for company in get_company():
+         if user['company_id'] == company.id:
+            the_company = company
 
-for user in users_list:
-   print(json.dumps(user.to_json()))
+      u = User(forename=user["forename"], surname=user["surname"], date_of_birth=user["date_of_birth"], location=user["location"], company=the_company)
 
+      birthdate = datetime.strptime(u.date_of_birth, '%Y/%m/%d').date()
+      today = datetime.today()    
+      age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+      if age >= 30:
+         users_list.append(u)
+   
+   return users_list
+
+
+dir = os.path.join("output")
+if not os.path.exists(dir):
+    os.mkdir(dir)
+
+json_list = []
+
+for user in get_user():
+   json_list.append(user.to_json())
+
+   if os.path.exists(PATH):
+      os.remove(PATH)
+
+with open(PATH, 'w') as f:
+   json.dump(json_list, f, indent=4)
