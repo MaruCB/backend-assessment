@@ -29,7 +29,7 @@ for user in user_data:
     u = User(forename=user["forename"], surname=user["surname"], date_of_birth=user["date_of_birth"], location=user["location"], company=the_company)
 
     birthdate = datetime.strptime(u.date_of_birth, '%Y/%m/%d').date()
-    today = datetime.today()    
+    today = datetime.today()
     age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
     if age >= 30:
         users_list.append(u)
