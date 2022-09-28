@@ -1,6 +1,3 @@
-from typing import Dict
-
-
 class Company:
     id: int
     name: str
@@ -15,11 +12,12 @@ class Company:
 
     def to_json(self):
         return {
-            'id': self.id ,
-            'name': self.name ,
-            'headquarters': self.headquarters ,
+            'id': self.id,
+            'name': self.name,
+            'headquarters': self.headquarters,
             'industry': self.industry
         }
+
 
 class User:
     forename: str
@@ -39,10 +37,10 @@ class User:
 
     def to_json(self):
         return {
-            'forename': self.forename ,
-            'surname': self.surname ,
-            'full_name': self.full_name ,
-            'date_of_birth': self.date_of_birth ,
-            'location': self.location ,
+            'forename': self.forename,
+            'surname': self.surname,
+            'full_name': self.full_name,
+            'date_of_birth': self.date_of_birth,
+            'location': self.location,
             'company': self.company.to_json()
         }
