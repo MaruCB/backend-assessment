@@ -7,7 +7,7 @@ class Company:
     def __init__(self, id: int, name: str, headquarters: str, industry: str):
         self.id = id
         self.name = name
-        self.headquarters =  headquarters
+        self.headquarters = headquarters
         self.industry = industry
 
     def to_json(self):
