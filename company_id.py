@@ -1,3 +1,5 @@
+# This file can be removed, right?
+
 import json
 
 with open('assets/company.json') as f:
