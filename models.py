@@ -1,4 +1,5 @@
-from typing import Dict
+from typing import Any, Dict, Optional
+from datetime import datetime
 
 
 class Company:
@@ -7,19 +8,15 @@ class Company:
     headquarters: str
     industry: str
 
-    def __init__(self, id: int, name: str, headquarters: str, industry: str):
+    def __init__(self, id: int, name: str, headquarters: str, industry: str) -> None:
         self.id = id
         self.name = name
-        self.headquarters =  headquarters
+        self.headquarters = headquarters
         self.industry = industry
 
-    def to_json(self):
-        return {
-            'id': self.id ,
-            'name': self.name ,
-            'headquarters': self.headquarters ,
-            'industry': self.industry
-        }
+    def to_json(self) -> Dict[str, Any]:
+        return {"id": self.id, "name": self.name, "headquarters": self.headquarters, "industry": self.industry}
+
 
 class User:
     forename: str
@@ -27,9 +24,9 @@ class User:
     full_name: str
     date_of_birth: str
     location: str
-    company: Company
+    company: Optional[Company]
 
-    def __init__(self, forename: str, surname: str, date_of_birth: str, location: str, company: Company):
+    def __init__(self, forename: str, surname: str, date_of_birth: str, location: str, company: Optional[Company]) -> None:
         self.forename = forename
         self.surname = surname
         self.full_name = f"{forename} {surname}"
@@ -37,12 +34,22 @@ class User:
         self.location = location
         self.company = company
 
-    def to_json(self):
-        return {
-            'forename': self.forename ,
-            'surname': self.surname ,
-            'full_name': self.full_name ,
-            'date_of_birth': self.date_of_birth ,
-            'location': self.location ,
-            'company': self.company.to_json()
+    def to_json(self) -> Dict[str, Any]:
+        json_output = {
+            "forename": self.forename,
+            "surname": self.surname,
+            "full_name": self.full_name,
+            "date_of_birth": self.date_of_birth,
+            "location": self.location,
         }
+
+        if self.company:
+            json_output.update({"company": self.company.to_json()})
+
+        return json_output
+
+    def age(self) -> int:
+        birthdate = datetime.strptime(self.date_of_birth, "%Y/%m/%d").date()
+        today = datetime.today()
+        age = today.year - birthdate.year - ((today.month, today.day) < (birthdate.month, birthdate.day))
+        return age
