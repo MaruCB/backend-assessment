@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 from typing import List
-from backend_assesment.models import User
+from models import User
 
 
 class DataExporter():

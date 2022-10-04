@@ -21,18 +21,18 @@ class Company:
 class User:
     forename: str
     surname: str
-    full_name: str
+    full_name: Optional[str]
     date_of_birth: str
     location: str
+    company_id:  int
     company: Optional[Company]
 
-    def __init__(self, forename: str, surname: str, date_of_birth: str, location: str, company: Optional[Company]) -> None:
+    def __init__(self, forename: str, surname: str, date_of_birth: str, location: str, company_id: int) -> None:
         self.forename = forename
         self.surname = surname
-        self.full_name = f"{forename} {surname}"
         self.date_of_birth = date_of_birth
         self.location = location
-        self.company = company
+        self.company_id = company_id
 
     def to_json(self) -> Dict:
         json_output = {

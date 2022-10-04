@@ -1,6 +1,6 @@
 import json
 from typing import List
-from backend_assesment.models import Company, User
+from models import Company, User
 
 
 class DataImporter():
@@ -27,16 +27,13 @@ class DataImporter():
             user_data = json.load(f)
 
         for user in user_data:
-            the_company = None
-            for company in self.read_companies_data():
-                if user["company_id"] == company.id:
-                    the_company = company
+            
             u = User(
                 forename=user["forename"],
                 surname=user["surname"],
                 date_of_birth=user["date_of_birth"],
                 location=user["location"],
-                company=the_company,
+                company_id=user["company_id"]
             )
             users_list.append(u)
         return users_list
