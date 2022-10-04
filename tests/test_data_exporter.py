@@ -1,0 +1,6 @@
+def test_create_file_if_directory_exists() -> None:
+    ...
+
+
+def test_create_file_if_directory_does_not_exists() -> None:
+    ...
