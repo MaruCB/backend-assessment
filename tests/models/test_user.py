@@ -1,4 +1,4 @@
-from models import User, Company
+from backend_assesment.models import User, Company
 
 
 # Notice that we test the to_json function on User here.
@@ -21,7 +21,7 @@ def test_user_to_json() -> None:
         "forename": "Rasmus",
         "surname": "Fangel",
         "full_name": "Rasmus Fangel",
-        "date_of_birth": "31/01/1991",
+        "date_of_birth": "31-01-1991",
         "location": "Paddock Wood",
         "company": {
             "id": 1,
@@ -58,7 +58,7 @@ def test_age_error() -> None:
     test_user = User(
         forename="Rasmus",
         surname="Fangel",
-        date_of_birth="31/01/1991",
+        date_of_birth="1991/01/31",
         location="Paddock Wood",
         company=Company(
             id=1,

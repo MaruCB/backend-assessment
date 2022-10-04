@@ -1,6 +1,6 @@
 import json
 from typing import List
-from models import Company, User
+from backend_assesment.models import Company, User
 
 
 class DataImporter():
@@ -12,7 +12,7 @@ class DataImporter():
         with open(self.COMPANY_PATH) as f:
             company_data = json.load(f)
 
-        for company in company_data: 
+        for company in company_data:
             c = Company(
                 id=company["id"], name=company["name"], headquarters=company["headquarters"], industry=company["industry"]
             )
@@ -40,4 +40,3 @@ class DataImporter():
             )
             users_list.append(u)
         return users_list
-
