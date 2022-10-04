@@ -34,7 +34,7 @@ class User:
         self.location = location
         self.company = company
 
-    def to_json(self) -> Dict[str, Any]:
+    def to_json(self) -> Dict:
         json_output = {
             "forename": self.forename,
             "surname": self.surname,
@@ -48,6 +48,8 @@ class User:
 
         return json_output
 
+    @property # This means that it gets treated as a field like you've defined on line 22
+    # That way we can call it like this: user.age (attribute) rather than user.age() which is a functional call
     def age(self) -> int:
         birthdate = datetime.strptime(self.date_of_birth, "%Y/%m/%d").date()
         today = datetime.today()
