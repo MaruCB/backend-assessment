@@ -24,7 +24,7 @@ class User:
     full_name: Optional[str]
     date_of_birth: str
     location: str
-    company_id:  int
+    company_id: int
     company: Optional[Company]
 
     def __init__(self, forename: str, surname: str, date_of_birth: str, location: str, company_id: int) -> None:

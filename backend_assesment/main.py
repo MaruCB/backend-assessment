@@ -1,5 +1,5 @@
-from data_importer import DataImporter
-from data_exporter import DataExporter
+from backend_assesment.data_importer import DataImporter
+from backend_assesment.data_exporter import DataExporter
 
 data_importer = DataImporter()
 # 1. Read users data
