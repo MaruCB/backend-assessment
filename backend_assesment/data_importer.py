@@ -1,6 +1,6 @@
 import json
 from typing import List
-from models import Company, User
+from backend_assesment.models import Company, User
 
 
 class DataImporter():
