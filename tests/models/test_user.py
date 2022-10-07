@@ -9,13 +9,15 @@ def test_user_to_json() -> None:
         surname="Fangel",
         date_of_birth="31-01-1991",
         location="Paddock Wood",
-        company=Company(
-            id=1,
-            name="Razzmatazz industries",
-            headquarters="Denmark",
-            industry="Software Development",
-        )
+        company_id=1
     )
+    test_user.company = Company(
+        id=1,
+        name="Razzmatazz industries",
+        headquarters="Denmark",
+        industry="Software Development",)
+
+    test_user.full_name = "Rasmus Fangel"
 
     expected_result = {
         "forename": "Rasmus",
@@ -41,12 +43,7 @@ def test_age() -> None:
         surname="Fangel",
         date_of_birth="1991/01/31",
         location="Paddock Wood",
-        company=Company(
-            id=1,
-            name="Razzmatazz industries",
-            headquarters="Denmark",
-            industry="Software Development",
-        )
+        company_id=1
     )
 
     assert test_user.age == 31
@@ -60,12 +57,7 @@ def test_age_error() -> None:
         surname="Fangel",
         date_of_birth="1991/01/31",
         location="Paddock Wood",
-        company=Company(
-            id=1,
-            name="Razzmatazz industries",
-            headquarters="Denmark",
-            industry="Software Development",
-        )
+        company_id=1
     )
 
     assert test_user.age == 31
