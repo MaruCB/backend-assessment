@@ -6,7 +6,7 @@ def test_company_to_json() -> None:
     test_company = Company(
         id=1,
         name="Razzmatazz industries",
-        headquarters="London",
+        headquarters="Denmark",
         industry="Software Development",
     )
 
