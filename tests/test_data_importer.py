@@ -33,4 +33,4 @@ def test_read_users_data(mock_data_importer_json: MagicMock):
     result = DataImporter().read_users_data()
 
     assert result[0].forename == users_test_data[0]["forename"]
-    assert result[0].full_name == "Ras ras"
+

@@ -11,7 +11,9 @@ class DataExporter():
 
     def create_file(self):
         dir = os.path.join(self.file_name)
-        if not os.path.exists(dir):
+        if os.path.exists(dir):
+            ...
+        else:
             os.mkdir(dir)
 
     def write_file(self, list: List[User]):
@@ -28,3 +30,4 @@ class DataExporter():
             os.remove(self.PATH)
         with open(self.PATH, "w") as f:
             f.write(json.dumps(json_output, indent=4))
+            ...

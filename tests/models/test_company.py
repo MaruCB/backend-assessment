@@ -13,7 +13,7 @@ def test_company_to_json() -> None:
     expected_result = {
         "id": 1,
         "name": "Razzmatazz industries",
-        "headquarters": "Denmark",
+        "headquarters": "London",
         "industry": "Software Development"
     }
 
