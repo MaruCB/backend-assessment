@@ -24,7 +24,7 @@ class DataExporter:
             users_json.append(user.to_json())
 
         json_output = {"timestamp": date}
-        json_output.update({"users": users_json})
+        json_output.update({"users": users_json})  # type: ignore
 
         if os.path.exists(self.PATH):
             os.remove(self.PATH)

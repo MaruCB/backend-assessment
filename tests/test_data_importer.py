@@ -20,7 +20,7 @@ def test_read_companies_data(mock_data_importer_json: MagicMock) -> None:
 
 
 @patch("backend_assesment.data_importer.json")
-def test_read_users_data(mock_data_importer_json: MagicMock):
+def test_read_users_data(mock_data_importer_json: MagicMock):  # type: ignore
 
     users_test_data = [
         {
