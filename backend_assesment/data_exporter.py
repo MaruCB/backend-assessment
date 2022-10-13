@@ -16,7 +16,7 @@ class DataExporter:
         else:
             os.mkdir(dir)
 
-    def write_file(self, list: List[User]):
+    def write_file(self, list: List[User]) -> None:
         self.create_file()
         date = datetime.now().strftime("%Y_%m_%d-%I:%M:%S_%p")
         users_json = []
