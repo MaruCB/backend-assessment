@@ -14,7 +14,7 @@ class Company:
         self.headquarters = headquarters
         self.industry = industry
 
-    def to_json(self) -> Dict[str, Any]:
+    def to_json(self) -> Dict[str, Optional[Any]]:
         return {
             "id": self.id,
             "name": self.name,
@@ -46,7 +46,7 @@ class User:
         self.location = location
         self.company_id = company_id
 
-    def to_json(self) -> Dict[str, Optional[str]]:
+    def to_json(self) -> Dict[str, Optional[Any]]:
         json_output = {
             "forename": self.forename,
             "surname": self.surname,
@@ -60,7 +60,7 @@ class User:
 
         return json_output
 
-    @property  #  This means that it gets treated as a field like you've defined on line 22
+    @property  # This means that it gets treated as a field like you've defined on line 22
     # That way we can call it like this: user.age (attribute) rather than user.age() which is a functional call
     def age(self) -> int:
         birthdate = datetime.strptime(self.date_of_birth, "%Y/%m/%d").date()
