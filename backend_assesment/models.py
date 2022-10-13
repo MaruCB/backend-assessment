@@ -46,7 +46,7 @@ class User:
         self.location = location
         self.company_id = company_id
 
-    def to_json(self) -> Dict[str, Optional[Any]]:
+    def to_json(self) -> Dict[str, Optional[str]]:
         json_output = {
             "forename": self.forename,
             "surname": self.surname,
