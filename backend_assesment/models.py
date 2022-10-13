@@ -1,4 +1,4 @@
-from typing import Any, Dict, Optional, Union
+from typing import Any, Dict, Optional
 from datetime import datetime
 
 
@@ -14,7 +14,7 @@ class Company:
         self.headquarters = headquarters
         self.industry = industry
 
-    def to_json(self) -> Dict[str, Union[int, str]]:
+    def to_json(self) -> Dict[str, Any]:
         return {
             "id": self.id,
             "name": self.name,
@@ -56,7 +56,7 @@ class User:
         }
 
         if self.company:
-            json_output.update({"company": self.company.to_json()})
+            json_output.update({"company": self.company.to_json()})  # type: ignore
 
         return json_output
 
