@@ -31,6 +31,6 @@ jobs:
           black --diff --check $(git ls-files '*.py')
       - name: Run mypy
         run: |
-          mypy
+          mypy --strict $(git ls-files '*.py')
 
 
