@@ -17,7 +17,7 @@ class DataImporter:
                 id=company["id"],
                 name=company["name"],
                 headquarters=company["headquarters"],
-                industry=company["industry"]
+                industry=company["industry"],
             )
             companies_list.append(c)
 

@@ -19,7 +19,7 @@ class Company:
             "id": self.id,
             "name": self.name,
             "headquarters": self.headquarters,
-            "industry": self.industry
+            "industry": self.industry,
         }
 
 
@@ -38,7 +38,7 @@ class User:
         surname: str,
         date_of_birth: str,
         location: str,
-        company_id: int
+        company_id: int,
     ) -> None:
         self.forename = forename
         self.surname = surname
@@ -60,14 +60,14 @@ class User:
 
         return json_output
 
-    @property #  This means that it gets treated as a field like you've defined on line 22
+    @property  #  This means that it gets treated as a field like you've defined on line 22
     # That way we can call it like this: user.age (attribute) rather than user.age() which is a functional call
     def age(self) -> int:
         birthdate = datetime.strptime(self.date_of_birth, "%Y/%m/%d").date()
         today = datetime.today()
         age = (
-            today.year 
-            - birthdate.year 
+            today.year
+            - birthdate.year
             - ((today.month, today.day) < (birthdate.month, birthdate.day))
         )
         return age

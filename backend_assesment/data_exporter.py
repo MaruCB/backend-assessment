@@ -18,12 +18,12 @@ class DataExporter:
 
     def write_file(self, list: List[User]):
         self.create_file()
-        date = datetime. now().strftime("%Y_%m_%d-%I:%M:%S_%p")
+        date = datetime.now().strftime("%Y_%m_%d-%I:%M:%S_%p")
         users_json = []
         for user in list:
             users_json.append(user.to_json())
 
-        json_output = {'timestamp': date}
+        json_output = {"timestamp": date}
         json_output.update({"users": users_json})
 
         if os.path.exists(self.PATH):

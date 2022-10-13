@@ -9,7 +9,7 @@ def test_user_to_json() -> None:
         surname="Fangel",
         date_of_birth="31-01-1991",
         location="Paddock Wood",
-        company_id=1
+        company_id=1,
     )
     test_user.company = Company(
         id=1,

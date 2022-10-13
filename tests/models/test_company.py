@@ -14,7 +14,7 @@ def test_company_to_json() -> None:
         "id": 1,
         "name": "Razzmatazz industries",
         "headquarters": "Denmark",
-        "industry": "Software Development"
+        "industry": "Software Development",
     }
 
     assert expected_result == test_company.to_json()
