@@ -9,7 +9,7 @@ class DataExporter:
     PATH = "./output/output.json"
     file_name = "output"
 
-    def create_file(self):
+    def create_file(self) -> None:
         dir = os.path.join(self.file_name)
         if os.path.exists(dir):
             ...
