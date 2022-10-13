@@ -14,7 +14,7 @@ class Company:
         self.headquarters = headquarters
         self.industry = industry
 
-    def to_json(self) -> Dict[str, Optional[Any]]:
+    def to_json(self) -> Dict[str, Any]:
         return {
             "id": self.id,
             "name": self.name,
