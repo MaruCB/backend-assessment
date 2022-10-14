@@ -1,4 +1,3 @@
-from typing import Any
 from unittest.mock import MagicMock, patch
 
 from backend_assesment.data_importer import DataImporter
@@ -20,7 +19,7 @@ def test_read_companies_data(mock_data_importer_json: MagicMock) -> None:
 
 
 @patch("backend_assesment.data_importer.json")
-def test_read_users_data(mock_data_importer_json: MagicMock):  # type: ignore
+def test_read_users_data(mock_data_importer_json: MagicMock) -> None:
 
     users_test_data = [
         {

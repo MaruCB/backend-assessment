@@ -1,5 +1,6 @@
 import json
 from typing import List
+
 from backend_assesment.models import Company, User
 
 

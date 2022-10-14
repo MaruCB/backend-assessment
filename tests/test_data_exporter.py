@@ -1,10 +1,6 @@
-from unittest import mock
 from unittest.mock import MagicMock, patch
 
-from pytest import TempdirFactory
 from backend_assesment.data_exporter import DataExporter
-from unittest.mock import MagicMock
-import os
 from backend_assesment.models import Company, User
 
 

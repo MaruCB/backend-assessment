@@ -1,7 +1,8 @@
-import os
 import json
+import os
 from datetime import datetime
 from typing import List
+
 from backend_assesment.models import User
 
 

@@ -1,5 +1,5 @@
-from typing import Any, Dict, Optional
 from datetime import datetime
+from typing import Dict, Optional, Union
 
 
 class Company:
@@ -14,7 +14,7 @@ class Company:
         self.headquarters = headquarters
         self.industry = industry
 
-    def to_json(self) -> Dict[str, Any]:
+    def to_json(self) -> Dict[str, Union[str, int]]:
         return {
             "id": self.id,
             "name": self.name,

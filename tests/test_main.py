@@ -35,5 +35,4 @@ def test_main(
     # Path write_file
     mock_os.path.exists.side_effect = [True, False]
     # mock_os.path.exist = MagicMock(return_value= True)
-    mock_open = MagicMock(return_value=None)
-    # from backend_assesment import main
+    mock_open = MagicMock(return_value=None)  # noqa: F841
