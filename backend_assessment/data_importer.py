@@ -1,10 +1,11 @@
 import json
 from typing import List
-from backend_assesment.models import Company, User
+
+from backend_assessment.models import Company, User
 
 
-class DataImporter():
-    USER_PATH = "./assets/user.json" 
+class DataImporter:
+    USER_PATH = "./assets/user.json"
     COMPANY_PATH = "./assets/company.json"
 
     def read_companies_data(self) -> List[Company]:
@@ -14,7 +15,10 @@ class DataImporter():
 
         for company in company_data:
             c = Company(
-                id=company["id"], name=company["name"], headquarters=company["headquarters"], industry=company["industry"]
+                id=company["id"],
+                name=company["name"],
+                headquarters=company["headquarters"],
+                industry=company["industry"],
             )
             companies_list.append(c)
 
@@ -27,13 +31,13 @@ class DataImporter():
             user_data = json.load(f)
 
         for user in user_data:
-            
+
             u = User(
                 forename=user["forename"],
                 surname=user["surname"],
                 date_of_birth=user["date_of_birth"],
                 location=user["location"],
-                company_id=user["company_id"]
+                company_id=user["company_id"],
             )
             users_list.append(u)
         return users_list

@@ -1,10 +1,9 @@
-from typing import Any
 from unittest.mock import MagicMock, patch
 
-from backend_assesment.data_importer import DataImporter
+from backend_assessment.data_importer import DataImporter
 
 
-@patch("backend_assesment.data_importer.json")
+@patch("backend_assessment.data_importer.json")
 def test_read_companies_data(mock_data_importer_json: MagicMock) -> None:
     test_data = [
         {"id": 1, "name": "ras", "headquarters": "Denmark", "industry": "Software"}
@@ -19,18 +18,25 @@ def test_read_companies_data(mock_data_importer_json: MagicMock) -> None:
     assert companies[0].headquarters == test_data[0]["headquarters"]
 
 
-@patch("backend_assesment.data_importer.json")
-def test_read_users_data(mock_data_importer_json: MagicMock):
-    
+@patch("backend_assessment.data_importer.json")
+def test_read_users_data(mock_data_importer_json: MagicMock) -> None:
+
     users_test_data = [
-        {"forename": "Ras", "surname": "ras", "date_of_birth": "2001/10/12", "location": "London", "company_id": 1}
+        {
+            "forename": "Ras",
+            "surname": "ras",
+            "date_of_birth": "2001/10/12",
+            "location": "London",
+            "company_id": 1,
+        }
     ]
 
-    companies_test_data = [{"id": 1, "name": "ras", "headquarters": "Denmark", "industry": "Software"}]
+    companies_test_data = [
+        {"id": 1, "name": "ras", "headquarters": "Denmark", "industry": "Software"}
+    ]
 
     mock_data_importer_json.load.side_effect = [users_test_data, companies_test_data]
 
     result = DataImporter().read_users_data()
 
     assert result[0].forename == users_test_data[0]["forename"]
-

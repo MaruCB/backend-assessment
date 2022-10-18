@@ -1,4 +1,4 @@
-from backend_assesment.models import User, Company
+from backend_assessment.models import Company, User
 
 
 # Notice that we test the to_json function on User here.
@@ -9,13 +9,14 @@ def test_user_to_json() -> None:
         surname="Fangel",
         date_of_birth="31-01-1991",
         location="Paddock Wood",
-        company_id=1
+        company_id=1,
     )
     test_user.company = Company(
         id=1,
         name="Razzmatazz industries",
         headquarters="Denmark",
-        industry="Software Development",)
+        industry="Software Development",
+    )
 
     test_user.full_name = "Rasmus Fangel"
 
@@ -29,8 +30,8 @@ def test_user_to_json() -> None:
             "id": 1,
             "name": "Razzmatazz industries",
             "headquarters": "Denmark",
-            "industry": "Software Development"
-        }
+            "industry": "Software Development",
+        },
     }
 
     assert expected_result == test_user.to_json()
@@ -43,7 +44,7 @@ def test_age() -> None:
         surname="Fangel",
         date_of_birth="1991/01/31",
         location="Paddock Wood",
-        company_id=1
+        company_id=1,
     )
 
     assert test_user.age == 31
@@ -57,7 +58,7 @@ def test_age_error() -> None:
         surname="Fangel",
         date_of_birth="1991/01/31",
         location="Paddock Wood",
-        company_id=1
+        company_id=1,
     )
 
     assert test_user.age == 31

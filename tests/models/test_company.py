@@ -1,4 +1,4 @@
-from backend_assesment.models import Company
+from backend_assessment.models import Company
 
 
 # Notice that we test the to_json function on Company here
@@ -14,7 +14,7 @@ def test_company_to_json() -> None:
         "id": 1,
         "name": "Razzmatazz industries",
         "headquarters": "Denmark",
-        "industry": "Software Development"
+        "industry": "Software Development",
     }
 
     assert expected_result == test_company.to_json()
