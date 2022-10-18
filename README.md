@@ -1,38 +1,20 @@
-# LifeWorks Backend Developer Assessment
+# Backend Assessment
 
-This assessment is designed to be simple and its primary aim is to assess how you approach and solve software
-development problems holistically.
-It contains only [three tasks](#tasks) which involve transforming user and company data.
+This application is written in Python. It was initially created to learn how to solve software development problems holistically, implementing Object Oriented Programing [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming), [UnitTest](https://docs.python-guide.org/writing/tests/), [GitHub Actions](https://docs.github.com/en/actions),
 
-Please be aware this isn't a test, and you will not be solely accepted or rejected based on your answers,
-but your answers may give us some idea about your code culture and technical capabilities.
-All candidates asked to complete the assessment will be invited to a technical interview where the assessment
-will be discussed along with their general technical knowledge and experience.
+## How to Contribute
+Feel free to fork our repo and create a pull request with any changes you'd like to see us incorporate. We're open to suggestions :)
 
-## How to Complete the Assessment
+Fork the Project
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
+Commit your Changes (git commit -m 'Add some AmazingFeature')
+Push to the Branch (git push origin feature/AmazingFeature)
+Open a Pull Request
 
-You will be advised by your recruitment contact which software language to complete this assessment in,
-but it will be either PHP, Python or Node JS.
+## Acknowledgments and Contact
+[Maria Casado](https://github.com/MaruCB)
+[Rasmus Fangel](https://github.com/RasmusFangel)
 
-Please clone this repository, complete the [tasks defined below](#tasks) and push the finished code to a private
-GitHub repository. Once this is done inform your relevant recruitment contact and we will advise on which GitHub users
-need access to review the assessment.
-
-Please be aware the assessment should be completed 24 hours before your scheduled technical interview. If you have
-any issues with this please inform your relevant recruitment contact.
-
-### Completion Time
-
-We expect this assessment to take **2-4 hours** to complete dependent on experience. Please do not spend more
-than 4 hours on this assessment. We'd prefer you submit an assessment which is well done but half complete,
-rather than an assessment which is complete but poorly done.
-
-You can complete this assessment in any way you see fit, but we expect you will have to complete the work in three
-basic steps:
-
-- **Domain Warmup (30-60 mins)** consider the problem and gather information.
-- **Environment Setup (30-60 mins)** create and configure your environment.
-- **Task Completion (60-120 mins)** solve the individual tasks and push the code.
 
 ## Tips and Advice
 
