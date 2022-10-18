@@ -1,9 +1,9 @@
 from unittest.mock import MagicMock, patch
 
-from backend_assesment.data_importer import DataImporter
+from backend_assessment.data_importer import DataImporter
 
 
-@patch("backend_assesment.data_importer.json")
+@patch("backend_assessment.data_importer.json")
 def test_read_companies_data(mock_data_importer_json: MagicMock) -> None:
     test_data = [
         {"id": 1, "name": "ras", "headquarters": "Denmark", "industry": "Software"}
@@ -18,7 +18,7 @@ def test_read_companies_data(mock_data_importer_json: MagicMock) -> None:
     assert companies[0].headquarters == test_data[0]["headquarters"]
 
 
-@patch("backend_assesment.data_importer.json")
+@patch("backend_assessment.data_importer.json")
 def test_read_users_data(mock_data_importer_json: MagicMock) -> None:
 
     users_test_data = [

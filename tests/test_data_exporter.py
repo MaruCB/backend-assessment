@@ -1,10 +1,10 @@
 from unittest.mock import MagicMock, patch
 
-from backend_assesment.data_exporter import DataExporter
-from backend_assesment.models import Company, User
+from backend_assessment.data_exporter import DataExporter
+from backend_assessment.models import Company, User
 
 
-@patch("backend_assesment.data_exporter.os")
+@patch("backend_assessment.data_exporter.os")
 def test_create_file_if_directory_does_not_exists(mock_os: MagicMock) -> None:
     mock_os.path.exists = MagicMock(return_value=True)
     mock_os.mkdir = MagicMock(return_value=None)
@@ -14,7 +14,7 @@ def test_create_file_if_directory_does_not_exists(mock_os: MagicMock) -> None:
     mock_os.mkdir.assert_not_called()
 
 
-@patch("backend_assesment.data_exporter.os")
+@patch("backend_assessment.data_exporter.os")
 def test_create_file_if_directory_exists(mock_os: MagicMock) -> None:
     mock_os.path.exists = MagicMock(return_value=False)
     mock_os.mkdir = MagicMock(return_value=None)
@@ -24,8 +24,8 @@ def test_create_file_if_directory_exists(mock_os: MagicMock) -> None:
     mock_os.mkdir.assert_called()
 
 
-@patch("backend_assesment.data_exporter.os")
-@patch("backend_assesment.data_exporter.open")
+@patch("backend_assessment.data_exporter.os")
+@patch("backend_assessment.data_exporter.open")
 def test_write_file(mock_open: MagicMock, mock_os: MagicMock) -> None:
 
     user_list = []
@@ -54,8 +54,8 @@ def test_write_file(mock_open: MagicMock, mock_os: MagicMock) -> None:
     mock_os.remove.assert_not_called()
 
 
-@patch("backend_assesment.data_exporter.os")
-@patch("backend_assesment.data_exporter.open")
+@patch("backend_assessment.data_exporter.os")
+@patch("backend_assessment.data_exporter.open")
 def test_write_file_remove(mock_open: MagicMock, mock_os: MagicMock) -> None:
 
     user_list = []

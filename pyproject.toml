@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "backend-assessment"
+version = "0.1.0"
+description = ""
+authors = ["Maria Casado <maria.casado@lifeworks.com>"]
+readme = "README.md"
+packages = [{include = "backend_assessment"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+freezegun = "^1.2.2"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^0.982"
+pytest = "^7.1.3"
+pytest-cov = "^4.0.0"
+flake8 = "^5.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+my-script = "backend_assessment.main:start"

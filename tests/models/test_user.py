@@ -1,4 +1,4 @@
-from backend_assesment.models import Company, User
+from backend_assessment.models import Company, User
 
 
 # Notice that we test the to_json function on User here.

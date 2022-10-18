@@ -1,12 +1,9 @@
 from unittest.mock import MagicMock, patch
 
-# from backend_assesment.data_importer import DataImporter
-# from backend_assesment.models import User
 
-
-@patch("backend_assesment.data_importer.json")
-@patch("backend_assesment.data_exporter.os")
-@patch("backend_assesment.data_exporter.open")
+@patch("backend_assessment.data_importer.json")
+@patch("backend_assessment.data_exporter.os")
+@patch("backend_assessment.data_exporter.open")
 def test_main(
     mock_open: MagicMock, mock_os: MagicMock, mock_data_importer_json: MagicMock
 ) -> None:

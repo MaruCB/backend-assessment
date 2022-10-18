@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from typing import List
 
-from backend_assesment.models import User
+from backend_assessment.models import User
 
 
 class DataExporter:
