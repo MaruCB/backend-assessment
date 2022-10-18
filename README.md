@@ -12,9 +12,10 @@ If no version number is returned, please install [Python](https://python.land/in
 
 ## Dependencies
 
-You'll also need to install all dependencies of the project with:
+You'll also need to run all dependencies of the project with:
 ```
-poetry run
+poetry install
+poetry run my-script
 ```
 You can find more information about Poetry [here](https://python-poetry.org/docs/basic-usage/#using-poetry-run).
 
